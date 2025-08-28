@@ -106,7 +106,9 @@ export interface ThemeColors {
   warning: string;
   error: string;
   background: string;
+  backgroundSecondary: string;
   surface: string;
+  border: string;
   text: string;
   textSecondary: string;
 }
@@ -115,6 +117,12 @@ export interface Theme {
   colors: ThemeColors;
   spacing: {
     xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+  };
+  borderRadius: {
     sm: string;
     md: string;
     lg: string;

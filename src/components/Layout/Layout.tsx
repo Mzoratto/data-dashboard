@@ -6,6 +6,7 @@
  */
 
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { lightTheme, getBoxShadow, getBorderRadius, getTransition, gradients } from '../../utils/theme';
 
@@ -109,7 +110,7 @@ const SidebarContent = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-const NavItem = styled.div`
+const NavItem = styled(Link)<{ $isActive: boolean }>`
   padding: ${lightTheme.spacing.md};
   margin: ${lightTheme.spacing.sm} 0;
   border-radius: ${getBorderRadius('md')};
@@ -118,15 +119,15 @@ const NavItem = styled.div`
   display: flex;
   align-items: center;
   gap: ${lightTheme.spacing.md};
+  text-decoration: none;
+  color: ${props => props.$isActive ? 'white' : lightTheme.colors.text};
 
   &:hover {
     background-color: ${lightTheme.colors.background};
+    color: ${lightTheme.colors.text};
   }
 
-  &.active {
-    background-color: ${lightTheme.colors.primary};
-    color: white;
-  }
+  background-color: ${props => props.$isActive ? lightTheme.colors.primary : 'transparent'};
 `;
 
 const Overlay = styled.div<{ show: boolean }>`
@@ -150,6 +151,7 @@ const Overlay = styled.div<{ show: boolean }>`
  */
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -159,6 +161,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     setSidebarOpen(false);
   };
 
+  const navigationItems = [
+    { path: '/', icon: '📈', label: 'Dashboard' },
+    { path: '/analytics', icon: '📊', label: 'Analytics' },
+    { path: '/enhanced-analytics', icon: '🚀', label: 'Enhanced Analytics' },
+    { path: '/sales', icon: '💰', label: 'Sales' },
+    { path: '/users', icon: '👥', label: 'Users' },
+    { path: '/settings', icon: '⚙️', label: 'Settings' }
+  ];
+
   return (
     <LayoutContainer>
       <Overlay show={sidebarOpen} onClick={closeSidebar} />
@@ -167,26 +178,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <SidebarContent isOpen={sidebarOpen}>
           <Logo>📊 Dashboard</Logo>
           <nav style={{ marginTop: lightTheme.spacing.xl }}>
-            <NavItem className="active">
-              <span>📈</span>
-              {sidebarOpen && <span>Overview</span>}
-            </NavItem>
-            <NavItem>
-              <span>📊</span>
-              {sidebarOpen && <span>Analytics</span>}
-            </NavItem>
-            <NavItem>
-              <span>💰</span>
-              {sidebarOpen && <span>Sales</span>}
-            </NavItem>
-            <NavItem>
-              <span>👥</span>
-              {sidebarOpen && <span>Users</span>}
-            </NavItem>
-            <NavItem>
-              <span>⚙️</span>
-              {sidebarOpen && <span>Settings</span>}
-            </NavItem>
+            {navigationItems.map((item) => (
+              <NavItem
+                key={item.path}
+                to={item.path}
+                $isActive={location.pathname === item.path}
+                onClick={closeSidebar}
+              >
+                <span>{item.icon}</span>
+                {sidebarOpen && <span>{item.label}</span>}
+              </NavItem>
+            ))}
           </nav>
         </SidebarContent>
       </Sidebar>

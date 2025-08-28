@@ -1,35 +1,42 @@
-# 📊 Modern Data Dashboard
+# 📊 Modern Data Dashboard - Enhanced Analytics Platform
 
-A beautiful, responsive, and feature-rich data dashboard built with React, TypeScript, and Chart.js. This application provides real-time data visualization with interactive charts, modern UI components, and a seamless user experience across all devices.
+A beautiful, responsive, and feature-rich data dashboard built with React 19, TypeScript, and Chart.js. This application provides **real-time data visualization** with interactive charts, **live data streaming**, modern UI components, and a seamless user experience across all devices.
 
 ![Dashboard Preview](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
-![React](https://img.shields.io/badge/React-18.2.0-blue)
+![React](https://img.shields.io/badge/React-19.1.1-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue)
-![Chart.js](https://img.shields.io/badge/Chart.js-4.4.0-orange)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.5.0-orange)
+
+## 🎯 **Live Demo**
+
+**[View Live Demo →](https://mzoratto.github.io/data-dashboard/)**
 
 ## ✨ Features
 
-### 🎯 Core Functionality
-- **Real-time Data Visualization** - Interactive charts with live data updates
-- **Responsive Design** - Optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX** - Clean, intuitive interface with smooth animations
-- **State Management** - Efficient data handling with React Context API
-- **Error Handling** - Graceful error boundaries and user feedback
-- **Accessibility** - WCAG 2.1 AA compliant for inclusive design
+### 🚀 **Enhanced Core Functionality** 
+- **Real-time Data Streaming** ⚡ - Live updates every 3-5 seconds with configurable intervals
+- **Advanced Analytics Page** 📊 - Comprehensive data insights with trending keywords
+- **Interactive Chart Controls** 🎛️ - Zoom, pan, reset, and live data toggle
+- **Live Metrics Animation** 📈 - Smooth counter animations with real-time updates
+- **Demo Controls** 🎮 - Floating controls for testing different scenarios
+- **Theme System** 🌓 - Dynamic dark/light theme switching
+- **Performance Monitoring** ⚡ - Real-time performance metrics tracking
 
-### 📈 Dashboard Components
-- **4 Interactive Metric Cards** - Key performance indicators with trend analysis
-- **Multiple Chart Types** - Line, Bar, Pie, and Doughnut charts
-- **Real-time Updates** - Automatic data refresh with manual refresh option
-- **Loading States** - Smooth loading animations and skeleton screens
-- **Error States** - User-friendly error messages and recovery options
+### 📈 **Advanced Dashboard Components**
+- **6 Dashboard Pages** - Main, Analytics, Enhanced Analytics, Sales, Users, Settings
+- **Real-time Metric Cards** - Live updating KPIs with trend analysis
+- **Multiple Chart Types** - Line, Bar, Pie, and Interactive charts with zoom controls
+- **Trending Keywords Tracker** - Live keyword analytics with change indicators
+- **Performance Insights** - System metrics and load time tracking
+- **Live Data Controls** - Start/stop streaming, refresh data, configure intervals
 
-### 🎨 Design Excellence
-- **Modern Gradients** - Beautiful color schemes and visual hierarchy
-- **Smooth Animations** - CSS transitions and hover effects
-- **Responsive Layout** - Adaptive sidebar and grid layouts
-- **Dark/Light Themes** - Support for user preference detection
-- **Custom Components** - Reusable UI components with consistent styling
+### 🎨 **Design Excellence**
+- **Modern React 19** - Latest React features with TypeScript 4.9
+- **Styled Components 6.1** - Advanced CSS-in-JS with theme system
+- **Responsive Navigation** - Collapsible sidebar with active route highlighting
+- **Smooth Animations** - CSS transitions, loading states, and micro-interactions
+- **Professional Gradients** - Beautiful color schemes and visual hierarchy
+- **Accessibility Compliant** - WCAG 2.1 AA standards with ARIA support
 
 ## 🚀 Quick Start
 

@@ -18,9 +18,12 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  style?: React.CSSProperties;
 }
 
-const ButtonContainer = styled.button<{
+const ButtonContainer = styled.button.withConfig({
+  shouldForwardProp: (prop) => !['variant', 'size', 'loading'].includes(prop),
+})<{
   variant: 'primary' | 'secondary' | 'outline' | 'ghost';
   size: 'sm' | 'md' | 'lg';
   disabled: boolean;
@@ -183,6 +186,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   className,
   type = 'button',
+  style,
 }) => {
   return (
     <ButtonContainer
@@ -193,6 +197,7 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       className={className}
       type={type}
+      style={style}
     >
       <ButtonContent loading={loading}>
         {icon && <span>{icon}</span>}
