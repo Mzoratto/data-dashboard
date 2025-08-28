@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Dashboard from './pages/Dashboard';
 import Analytics from './pages/Analytics';
@@ -24,14 +24,11 @@ import './App.css';
  * Main application component with routing and global state management
  */
 function App() {
-  // Handle basename for GitHub Pages deployment vs local development
-  const basename = process.env.NODE_ENV === 'production' ? '/data-dashboard' : '';
-  
   return (
     <ErrorBoundary>
       <ThemeProvider>
         <DashboardProvider>
-          <Router basename={basename}>
+          <Router>
             <Layout>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
